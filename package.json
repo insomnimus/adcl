@@ -1,0 +1,13 @@
+{
+	"name": "adcl",
+	"description": "A simple and lightweight command line argument parser inspired by rust's clap",
+	"license": "MIT",
+	"repository": "https://github.com/insomnimus/adcl",
+	"homepage": "https://github.com/insomnimus/adcl",
+	"bugs": "https://github.com/insomnimus/adcl/issues",
+	"keywords": [
+		"cli",
+		"flags",
+		"argument-parser"
+	]
+}
