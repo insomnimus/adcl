@@ -8,7 +8,6 @@
 	"repository": "https://github.com/insomnimus/adcl",
 	"homepage": "https://github.com/insomnimus/adcl",
 	"bugs": "https://github.com/insomnimus/adcl/issues",
-	"prepublish": "tsc",
 	"keywords": [
 		"cli",
 		"flags",
