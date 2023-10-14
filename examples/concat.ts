@@ -1,6 +1,6 @@
-const { Command } = require("adcl");
+// const  adcl = require("adcl");
 
-const args = new Command("concat", {
+const args = new adcl.Command("concat", {
 	sep: {
 		help: "The separator used to concatenate words",
 		default: "-",

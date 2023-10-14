@@ -1,6 +1,6 @@
-const { Command } = require("adcl");
+// const adcl = require("adcl");
 
-const args = new Command("bump-version", {
+const args = new adcl.Command("bump-version", {
 	bump: {
 		flags: ["b", "bump"],
 		help: "Bump which field?",

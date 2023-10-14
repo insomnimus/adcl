@@ -50,7 +50,7 @@ export interface Arg {
 	requiredUnlessAll?: string[];
 }
 
-interface ArgState extends Arg {
+export interface ArgState extends Arg {
 	key: string;
 	name: string;
 	isPositional: boolean;
@@ -62,7 +62,7 @@ interface ArgState extends Arg {
  *
  * The order is preserved during parsing and automatic help generation.
  * The keys are strings and they will be used in automatic help generation. */
-export type Args = {
+type Args = {
 	[name: string]: Arg;
 };
 
@@ -239,6 +239,7 @@ export class Command {
 	#versionAndExit(): never {
 		console.log(`${this.#name} ${this.#version ?? "unknown version"}`);
 		process.exit(0);
+		while (true) {}
 	}
 
 	#helpAndExit(_long: boolean): never {
@@ -309,7 +310,9 @@ export class Command {
 				console.log("    " + argHelp(arg));
 			}
 		}
+
 		process.exit(0);
+		while (true) {}
 	}
 
 	#errAndExit(msg: string, suggestHelp = true): never {
@@ -317,7 +320,9 @@ export class Command {
 
 		console.log(`error: ${msg}`);
 		if (suggestHelp) console.log("run with --help for more info");
+
 		process.exit(1);
+		while (true) {}
 	}
 
 	#preprocess(argv: string[]): string[] {
@@ -532,7 +537,7 @@ export class Command {
 	 *
 	 * Equivalent to `Command.parseFrom(process.argv.slice(2))`. */
 	parse(): ArgMatches {
-		return parseFrom(process.argv(2));
+		return this.parseFrom(process.argv.slice(2));
 	}
 }
 
